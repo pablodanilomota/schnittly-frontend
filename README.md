@@ -35,4 +35,9 @@ o desafio dessa vez será um **Shortener** de URL, ou seja, um serviço em que o
 - Netlify
 - Axios
 
+
 <br />
+
+👾 Da uma conferida lá no <a href="https://sch-ly.netlify.app/">Preview</a>
+
+Valeus 🖖
