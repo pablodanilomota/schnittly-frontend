@@ -29,7 +29,7 @@ export const useShortner = () => {
         url: urlToShort
       })
 
-      setShortnedUrl(url.data)
+      setShortnedUrl(`https://sch-ly.herokuapp.com/short/${url.data}`)
       setLoading(false)
     } catch (error) {
       setIsError(true)
