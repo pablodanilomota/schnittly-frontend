@@ -1,14 +1,22 @@
 import axios from 'axios'
 import { useState } from 'react'
 
+/**
+ * API url.
+ */
+const baseURL = 'https://sch-ly.herokuapp.com/short'
+
+/**
+ * Hook.
+ */
 export const useShortner = () => {
   /**
    * States.
    */
+  const [isError, setIsError] = useState(false)
   const [isLoading, setLoading] = useState(false)
   const [urlToShort, setUrlToShort] = useState('')
   const [shortnedUrl, setShortnedUrl] = useState('')
-  const [isError, setIsError] = useState(false)
 
   /**
    * Functions.
@@ -25,11 +33,11 @@ export const useShortner = () => {
       setIsError(false)
       setLoading(true)
 
-      const url = await axios.post('https://sch-ly.herokuapp.com/short', {
+      const url = await axios.post(baseURL, {
         url: urlToShort
       })
 
-      setShortnedUrl(`https://sch-ly.herokuapp.com/short/${url.data}`)
+      setShortnedUrl(`${baseURL}/${url.data}`)
       setLoading(false)
     } catch (error) {
       setIsError(true)

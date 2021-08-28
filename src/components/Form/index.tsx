@@ -39,7 +39,7 @@ export function Form() {
             _hover={{ border: '1px solid #F67D64' }}
             placeholder="paste a URL"
             focusBorderColor="#F67D64"
-            value={shortnedUrl ? shortnedUrl : urlToShort}
+            value={shortnedUrl || urlToShort}
             onChange={event => handleOnChange(event.target.value)}
           />
         </InputGroup>
@@ -55,7 +55,7 @@ export function Form() {
           marginTop="10px"
           marginRight="10px"
           backgroundColor="#F06042"
-          onClick={() => handleSubmit()}
+          onClick={handleSubmit}
           isLoading={isLoading}
         >
           Short
@@ -68,7 +68,7 @@ export function Form() {
           leftIcon={<CopyIcon />}
           marginTop="10px"
           backgroundColor="#F06042"
-          onClick={() => handleCopy()}
+          onClick={handleCopy}
           disabled={!shortnedUrl}
         >
           Copy
